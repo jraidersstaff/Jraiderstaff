@@ -1,0 +1,225 @@
+/*=============
+   BALDOSAS GALERIA
+===============*/
+
+body  {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    
+    vertical-align: baseline;
+}
+    
+.BaldosaContent {
+padding-top: 5px;
+}
+    .BaldosaContent h3 {
+      
+      font-size: 35px;
+      /*font-weight: 200;*/
+      color: white;
+      line-height: 65px;
+      padding-bottom: 40px;
+      margin-bottom: 30px;
+      background: url(../img/shared/barBottom.jpg) center bottom no-repeat; }
+      @media (min-width: 48em) {
+        .BaldosaContent h3 {
+          font-size: 50px; } }
+      .lt-ie9 .BaldosaContent h3 {
+        font-size: 50px; }
+    
+    .BaldosaContent a {
+      color: #F06A00;
+      
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 120%;
+      text-decoration: none;
+      text-transform: uppercase; }
+    /* estilos de las baldosas*/
+    
+    .ourWork .box {
+      background: black ; /* rgb(55,52,53) Color de las Baldosas*/
+      position: relative; }
+      @media (min-width: 48em) {
+        .ourWork .box {
+          width: 50%;
+          float: left;
+          display: inline-block; } }
+            
+      .lt-ie9 .ourWork .box {
+        width: 50%;
+        float: left;
+        display: inline-block; }
+      @media (min-width: 60em) {
+        .ourWork .box {
+          width: calc(100% / 3); } }
+      .lt-ie9 .ourWork .box {
+        width: calc(100% / 3); }
+      .ourWork .box img {
+        max-width: 100%;
+        width: 100%;
+        display: block;
+        height: auto;
+        position: relative;
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0);
+        transform: rotate(0);
+        backface-visibility: hidden; }
+      .ourWork .box h3 {
+        font-family: "NFL San Diego Chargers";
+        font-size: 80px;
+        font-weight: 200;
+        color: white;
+        padding-bottom: 40px;
+        text-transform: capitalize;
+        margin-bottom: 30px;
+        background: url(../img/shared/barBottom.jpg) center bottom no-repeat;
+        font-weight: 600;
+          text-shadow: 2px 2px 2px black;
+        }
+        
+        @media (min-width: 48em) {
+          .ourWork .box h3 {
+            font-family: "NFL San Diego Chargers";
+            font-size: 80px; 
+            text-shadow: 2px 2px 2px black;} } /* MODIFICADO*/
+        .lt-ie9 .ourWork .box h3 {
+          font-size: 37px; }
+      .ourWork .box .boxContent {
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        bottom: 0px;
+        height: 79px;
+        background: url(../img/shared/greenBG.png);
+        padding-top: 25px; }
+        @media (min-width: 48em) {
+          .ourWork .box .boxContent {
+            visibility: hidden;
+            background: none;
+            height: auto;
+            top: 25%; } }
+        .lt-ie9 .ourWork .box .boxContent {
+          visibility: hidden;
+          background: none;
+          height: auto;
+          top: 25%; }
+        .ourWork .box .boxContent a.button {
+          display: none;
+          color: white;
+          text-decoration: none !important;
+          
+          font-size: 26px; /* MODIFICADO 16PX*/
+        letter-spacing: 2px;/* MODIFICADO*/
+          font-weight: 600;
+          line-height: 120%;
+          text-decoration: none;
+          text-transform: uppercase; }
+          @media (min-width: 48em) {
+            .ourWork .box .boxContent a.button {
+              display: block; } }
+          .lt-ie9 .ourWork .box .boxContent a.button {
+            display: block; }
+    @media (min-width: 48em) {
+      .ourWork .box:hover img {
+        opacity: 0.3;
+        -webkit-opacity: 0.3;
+        -moz-opacity: 0.3;
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0);
+        transform: rotate(0);
+        -moz-transition: opacity, 0.5s;
+        -o-transition: opacity, 0.5s;
+        -webkit-transition: opacity, 0.5s;
+        transition: opacity, 0.5s; } }
+    .lt-ie9 .ourWork .box:hover img {
+      opacity: 0.3;
+      -webkit-opacity: 0.3;
+      -moz-opacity: 0.3;
+      -webkit-transform: rotate(0);
+      -moz-transform: rotate(0);
+      transform: rotate(0);
+      -moz-transition: opacity, 0.5s;
+      -o-transition: opacity, 0.5s;
+      -webkit-transition: opacity, 0.5s;
+      transition: opacity, 0.5s; }
+    @media (min-width: 48em) {
+      .ourWork .box:hover .boxContent {
+        visibility: visible;
+        -moz-transition: all, 0.5s;
+        -o-transition: all, 0.5s;
+        -webkit-transition: all, 0.5s;
+        transition: all, 0.5s; } }
+    .lt-ie9 .ourWork .box:hover .boxContent {
+      visibility: visible;
+      -moz-transition: all, 0.5s;
+      -o-transition: all, 0.5s;
+      -webkit-transition: all, 0.5s;
+      transition: all, 0.5s; }
+    
+    
+    .page-content .ourWork img {
+        opacity: 0.3;
+        -webkit-opacity: 0.3;
+        -moz-opacity: 0.3;
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0);
+        transform: rotate(0); }
+        @media (min-width: 48em) {
+          .page-content .ourWork img {
+            opacity: 1.0;
+            -webkit-opacity: 1.0;
+            -moz-opacity: 1.0; } }
+        .lt-ie9 .page-content .ourWork img {
+          opacity: 1.0;
+          -webkit-opacity: 1.0;
+          -moz-opacity: 1.0; }
+      .page-content .ourWork h3 {
+        margin-bottom: 15px !important;
+        padding-bottom: 15px !important;
+        font-size: 30px !important; }
+      .page-content .ourWork a {
+        color: white;
+        text-decoration: none; }
+
+/*=============*/
+
+/*=========================
+   FOOTER - PIE DE PAGINA
+===========================*/
+
+.linea {
+  border-top: 1px solid  #AB8024; /* #FEC92A */
+  height: 2px;
+  padding: 0;
+  margin: 20px 20px 20px 20px;
+}
+
+
+
+.contenedor_footer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 25px;
+}
+
+.contenedor_footer img {
+  width: 100px;
+  margin: 20px;
+
+}
+
+.contenedor_footer p {
+  color: rgba(254,254,254, 0.5) ;
+  width: 100%;
+  text-align: center;
+
+}
+
+/*=============
+ F I N 
+===============*/
