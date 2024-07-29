@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de Catalogo</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Menu de Catalogo</h1>
+
+        <!-- Search Menu -->
+        <div class="form-group">
+            <label for="categorySelect">menu:</label>
+            <select class="form-control" id="categorySelect" onchange="showProducts()">
+                <option value="all">todo</option>
+                <option value="electronics">Cascos</option>
+                <option value="clothing">Guantes</option>
+                <option value="books">Chaquetas</option>
+            </select>
+        </div>
+
+        <!-- Carousel -->
+        <div id="productCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" id="carouselInner">
+                <!-- Items will be injected here by JavaScript -->
+            </div>
+            <a class="carousel-control-prev" href="#productCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Atras</span>
+            </a>
+            <a class="carousel-control-next" href="#productCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Bootstrap and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        const products = {
+            Cascos: [
+                { src: 'https://via.placeholder.com/800x400?text=Cascos+1', title: 'Cascos Producto 1' },
+                { src: 'https://via.placeholder.com/800x400?text=Cascos+2', title: 'Cascos Producto 2' },
+                { src: 'https://via.placeholder.com/800x400?text=Cascos+3', title: 'Cascos Producto 3' }
+            ],
+            Guantes: [
+                { src: 'https://via.placeholder.com/800x400?text=Guantes+1', title: 'Guantes Producto 1' },
+                { src: 'https://via.placeholder.com/800x400?text=Guantes+2', title: 'Guantes Producto 2' },
+                { src: 'https://via.placeholder.com/800x400?text=Guantes+3', title: 'Guantes Producto 3' }
+            ],
+            Chaquetas: [
+                { src: 'https://via.placeholder.com/800x400?text=Chaquetas+1', title: 'Chaquetas Producto 1' },
+                { src: 'https://via.placeholder.com/800x400?text=Chaquetas+2', title: 'Chaquetas Producto 2' },
+                { src: 'https://via.placeholder.com/800x400?text=Chaquetas+3', title: 'Chaquetas Producto 3' }
+            ]
+        };
+
+        function showProducts() {
+            const category = document.getElementById('categorySelect').value;
+            const carouselInner = document.getElementById('carouselInner');
+            carouselInner.innerHTML = '';
+
+            let items;
+            if (category === 'all') {
+                items = Object.values(products).flat();
+            } else {
+                items = products[category];
+            }
+
+            items.forEach((product, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'carousel-item' + (index === 0 ? ' active' : '');
+                itemDiv.innerHTML = `
+                    <img src="${product.src}" class="d-block w-100" alt="${product.title}">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>${product.title}</h5>
+                    </div>
+                `;
+                carouselInner.appendChild(itemDiv);
+            });
+        }
+
+        // Initialize with all products
+        document.addEventListener('DOMContentLoaded', () => {
+            showProducts();
+        });
+    </script>
+</body>
+</html>

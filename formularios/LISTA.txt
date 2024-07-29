@@ -1,0 +1,35 @@
+interfaces
+
+usuarios LISTA DE USURIO - BOTONES DE ELIMINAR Y EDITAR Y UN BOTON CUADRO hecho
+nombre
+apellido
+celular
+correo
+
+producto hecho
+
+
+
+carrito hecho
+
+nombre del producto
+imagen del producto
+cantidad boton de dis y aumentar
+precio
+en un cuadro aparte resumen de compra
+pagar
+
+bootstrap
+
+angular revision
+
+App movil
+control de versiones
+
+sena
+Metallica100310*
+git
+NoRemorse100310*
+
+
+Se tiene un entorno virtual configurado en django con su correspondiente crud se necesita consumir una api y configurarlo con angular que funcione correctamente

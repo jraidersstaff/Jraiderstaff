@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administración de Usuarios</title>
+  <!-- Enlace a Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card mb-3">
+          <div class="card-header bg-primary text-white">
+            Registro de Usuario
+          </div>
+          <div class="card-body">
+            <form id="registroForm">
+              <div class="form-group">
+                <label for="id">ID:</label>
+                <input type="text" class="form-control" id="id" name="id" required>
+              </div>
+              <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+              </div>
+              <div class="form-group">
+                <label for="apellido">Apellido:</label>
+                <input type="text" class="form-control" id="apellido" name="apellido" required>
+              </div>
+              <div class="form-group">
+                <label for="rol">Rol:</label>
+                <select class="form-control" id="rol" name="rol" required>
+                  <option value="">Seleccione Rol</option>
+                  <option value="administrador">Administrador</option>
+                  <option value="almacenista">Almacenista</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Lista de Usuarios Registrados -->
+        <div class="card">
+          <div class="card-header bg-info text-white">
+            Usuarios Registrados
+          </div>
+          <div class="card-body">
+            <ul class="list-group" id="listaUsuarios">
+              <!-- Aquí se mostrarán los usuarios registrados dinámicamente -->
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel de Edición y Restauración de Contraseña -->
+      <div class="col-md-6">
+        <div class="card mb-3">
+          <div class="card-header bg-success text-white">
+            Edición y Restauración de Contraseña
+          </div>
+          <div class="card-body">
+            <form id="edicionForm">
+              <div class="form-group">
+                <label for="idEditar">ID:</label>
+                <input type="text" class="form-control" id="idEditar" name="idEditar" readonly>
+              </div>
+              <div class="form-group">
+                <label for="nombreEditar">Nombre:</label>
+                <input type="text" class="form-control" id="nombreEditar" name="nombreEditar" readonly>
+              </div>
+              <div class="form-group">
+                <label for="apellidoEditar">Apellido:</label>
+                <input type="text" class="form-control" id="apellidoEditar" name="apellidoEditar" readonly>
+              </div>
+              <button type="button" class="btn btn-warning btn-block">Editar Contraseña</button>
+              <button type="button" class="btn btn-danger btn-block">Restaurar Contraseña</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts de Bootstrap (jQuery y Popper.js requeridos para funcionalidad de Bootstrap) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Script JavaScript para funcionalidad adicional -->
+  <script>
+    // Simular datos de usuarios (ejemplo)
+    var usuarios = [
+      { id: '1', nombre: 'Juan', apellido: 'Pérez', rol: 'administrador' },
+      { id: '2', nombre: 'María', apellido: 'García', rol: 'almacenista' },
+      { id: '3', nombre: 'Carlos', apellido: 'Sánchez', rol: 'administrador' },
+      { id: '4', nombre: 'Laura', apellido: 'López', rol: 'almacenista' }
+    ];
+
+    // Función para cargar la lista de usuarios registrados
+    function cargarUsuarios() {
+      var listaUsuarios = document.getElementById('listaUsuarios');
+      listaUsuarios.innerHTML = '';
+      usuarios.forEach(function(usuario) {
+        var li = document.createElement('li');
+        li.className = 'list-group-item';
+        li.innerHTML = `${usuario.nombre} ${usuario.apellido} - ${usuario.rol}`;
+        var editarBtn = document.createElement('button');
+        editarBtn.className = 'btn btn-sm btn-primary float-right mr-2';
+        editarBtn.textContent = 'Editar';
+        editarBtn.addEventListener('click', function() {
+          document.getElementById('idEditar').value = usuario.id;
+          document.getElementById('nombreEditar').value = usuario.nombre;
+          document.getElementById('apellidoEditar').value = usuario.apellido;
+        });
+        li.appendChild(editarBtn);
+        listaUsuarios.appendChild(li);
+      });
+    }
+
+    // Cargar usuarios al cargar la página
+    cargarUsuarios();
+
+    // Capturar el envío del formulario de registro
+    document.getElementById('registroForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Evitar envío por defecto del formulario
+      var id = document.getElementById('id').value;
+      var nombre = document.getElementById('nombre').value;
+      var apellido = document.getElementById('apellido').value;
+      var rol = document.getElementById('rol').value;
+
+      // Agregar nuevo usuario a la lista (simulación)
+      usuarios.push({ id: id, nombre: nombre, apellido: apellido, rol: rol });
+      cargarUsuarios();
+      // Limpiar campos del formulario
+      document.getElementById('id').value = '';
+      document.getElementById('nombre').value = '';
+      document.getElementById('apellido').value = '';
+      document.getElementById('rol').value = '';
+    });
+
+    // Agregar funcionalidad de editar y eliminar usuarios (simulado)
+    // Esto sería donde se implementaría la lógica real para editar y eliminar usuarios
+    // En este ejemplo se muestra cómo se llenan los campos de edición en el formulario correspondiente
+    // No se implementa la funcionalidad completa de editar y eliminar por simplicidad del ejemplo
+
+  </script>
+</body>
+</html>

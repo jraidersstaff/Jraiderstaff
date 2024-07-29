@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de registros</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Estilos adicionales */
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2 class="mb-4">Creacion de registro</h2>
+                <!-- Formulario -->
+                <form>
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Ingrese su email">
+                    </div>
+                    <div class="form-group">
+                        <label for="celular">Numero Celular</label>
+                        <input type="number" class="form-control" id="numero" placeholder="Ingrese numero celular">
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Direccion:</label>
+                        <input type="text" class="form-control" id="direccion" placeholder="Ingrese su direccion">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Ingrese su email">
+                    </div>
+                    <!-- Boton Crear -->
+                    <div class="btn-container">
+                        <button type="submit" class="btn btn-success">Crear</button>
+                    </div>
+                </form>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

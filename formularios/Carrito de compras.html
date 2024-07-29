@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/soyunagueva.css">
+    </head>
+    
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Carrito de Compras</h2>
+        <div class="row">
+            <!-- Productos -->
+            <div class="col-md-8">
+                <div class="card mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="Cascos.jpg" class="card-img" alt="Producto 1">
+                        </div>
+                        <div class="col-md-6    ">
+                            <div class="card-body">
+                                <h5 class="card-title">Casco icon 1200</h5>
+                                <p class="card-text">$1.000.000</p>
+                                <p class="card-text">   Descripcion del producto:</p>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <div class="qty mt-5">
+                                            <span class="minus bg-dark">-</span>
+                                            <input type="number" class="count" name="qty" value="10">
+                                            <span class="plus bg-dark">+</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        Resumen de la Compra
+                    </div>
+                    <div class="card-body">
+                        <p>Producto: <span id="summary-product">Casco icon 12000</span></p>
+                        <p>Valor: $<span id="summary-value">1`000.000</span></p>
+                        <p>IVA (16%): $<span id="summary-iva">1.60</span></p>
+                        <p>Total: $<span id="summary-total">1`000.000</span></p>
+                        <button class="btn btn-primary" onclick="checkout()">Pagar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Bootstrap JS and dependencies (jQuery and Popper.js) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom Script -->
+    <script>
+        	$(document).ready(function(){
+		    $('.count').prop('disabled', true);
+   			$(document).on('click','.plus',function(){
+				$('.count').val(parseInt($('.count').val()) + 1 );
+    		});
+        	$(document).on('click','.minus',function(){
+    			$('.count').val(parseInt($('.count').val()) - 1 );
+    				if ($('.count').val() == 0) {
+						$('.count').val(1);
+					}
+    	    	});
+ 		});
+
+        function updateSummary(quantityId, price) {
+            let quantity = document.getElementById(quantityId).value;
+            let value = price * quantity;
+            let iva = value * 0.16;
+            let total = value + iva;
+
+            document.getElementById('summary-product').innerText = "Producto 1";
+            document.getElementById('summary-value').innerText = value.toFixed(2);
+            document.getElementById('summary-iva').innerText = iva.toFixed(2);
+            document.getElementById('summary-total').innerText = total.toFixed(2);
+        }
+
+        function checkout() {
+            alert("Procesando el pago...");
+        }
+    </script>
+</body>
+</html>

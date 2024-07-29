@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Pedidos</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>Formulario de Pedidos</h2>
+    <form>
+      <!-- Datos del Cliente -->
+      <div class="form-group">
+        <label for="customerName">Nombre del Cliente</label>
+        <input type="text" class="form-control" id="customerName" placeholder="Ingrese el nombre del cliente" required>
+      </div>
+      <div class="form-group">
+        <label for="customerAddress">Dirección</label>
+        <input type="text" class="form-control" id="customerAddress" placeholder="Ingrese la dirección" required>
+      </div>
+      <div class="form-group">
+        <label for="customerPhone">Número de Teléfono</label>
+        <input type="tel" class="form-control" id="customerPhone" placeholder="Ingrese el número de teléfono" required>
+      </div>
+
+      <!-- Detalles del Pedido -->
+      <div class="form-group">
+        <label for="productName">Nombre del Producto</label>
+        <input type="text" class="form-control" id="productName" placeholder="Ingrese el nombre del producto" required>
+      </div>
+      <div class="form-group">
+        <label for="productQuantity">Cantidad</label>
+        <input type="number" class="form-control" id="productQuantity" placeholder="Ingrese la cantidad" required>
+      </div>
+      
+      <!-- Método de Pago -->
+      <div class="form-group">
+        <label for="paymentMethod">Método de Pago</label>
+        <select class="form-control" id="paymentMethod" required>
+          <option value="">Seleccione el método de pago</option>
+          <option value="creditCard">Tarjeta de Crédito</option>
+          <option value="debitCard">Tarjeta de Débito</option>
+          <option value="cash">Efectivo</option>
+          <option value="bankTransfer">Transferencia Bancaria</option>
+        </select>
+      </div>
+
+      <!-- Botón de Envío -->
+      <button type="submit" class="btn btn-primary">Realizar Pedido</button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

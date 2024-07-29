@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vista de Producto</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Bootstrap JavaScript (optional) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Font Awesome for zoom icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    .zoom {
+      transition: transform 0.2s;
+      margin: 0 auto;
+    }
+
+    .zoom:hover {
+      transform: scale(1.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="https://via.placeholder.com/400" class="img-fluid zoom" alt="Producto">
+      </div>
+      <div class="col-md-6">
+        <h2>CASCO ICON 1200R</h2>
+        <p>Descripción del producto:</p>
+        <p>El casco Icon es una pieza fundamental para la seguridad y el estilo de los motociclistas modernos. Con un enfoque en la innovación, la calidad de construcción y un diseño distintivo, los cascos Icon han ganado una reputación notable en la comunidad de motociclistas.</p>
+        <form>
+          <div class="form-group">
+            <label for="talla">Selecciona la talla:</label>
+            <select class="form-control" id="talla">
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Agregar al Carrito</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript para la función de zoom -->
+  <script>
+    // Función para hacer zoom en la imagen al hacer clic
+    function zoomImage() {
+      var image = document.querySelector('.zoom');
+      image.classList.toggle('zoom-active');
+    }
+  </script>
+</body>
+</html>
